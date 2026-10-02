@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IA Que Vende — 20 Serviços com Inteligência Artificial</title>
+
+  <meta name="description" content="Descubra 20 serviços que você pode começar a oferecer usando inteligência artificial, mesmo começando do zero.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #05080d;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =========================
+       VARIÁVEIS
+    ========================== */
+
+    :root {
+      --blue: #19aaff;
+      --blue-dark: #087bc1;
+      --cyan: #39d5ff;
+      --dark: #05080d;
+      --dark-2: #0a1018;
+      --dark-3: #0d1620;
+      --text: #f4f8fc;
+      --muted: #9aa9b8;
+      --border: rgba(57, 213, 255, 0.16);
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5, 8, 13, 0.82);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      height: 76px;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #b8c5d1;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border-radius: 9px;
+      background: var(--blue);
+      color: white !important;
+      font-weight: 800;
+      box-shadow: 0 0 25px rgba(25,170,255,.18);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      padding: 145px 25px 80px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: rgba(0, 157, 255, .12);
+      filter: blur(120px);
+      border-radius: 50%;
+      top: 0;
+      left: -250px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(0, 209, 255, .08);
+      filter: blur(120px);
+      border-radius: 50%;
+      right: -200px;
+      bottom: -100px;
+    }
+
+    .hero-container {
+      max-width: 1180px;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 8px 13px;
+      border: 1px solid rgba(57,213,255,.3);
+      background: rgba(57,213,255,.06);
+      color: var(--cyan);
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--cyan);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 26px;
+      border-radius: 10px;
+      font-weight: 900;
+      font-size: 15px;
+      transition: .3s;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #11a9ff, #007dcc);
+      box-shadow: 0 12px 40px rgba(0,153,255,.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 50px rgba(0,153,255,.32);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.035);
+      color: #dce8f2;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(57,213,255,.4);
+      color: var(--cyan);
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: #6f8190;
+      font-size: 12px;
+    }
+
+    .product-cover {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-cover::before {
+      content: "";
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      background: rgba(20,168,255,.17);
+      filter: blur(60px);
+      border-radius: 50%;
+    }
+
+    .product-cover img {
+      position: relative;
+      width: min(470px, 100%);
+      border-radius: 20px;
+      border: 1px solid rgba(57,213,255,.22);
+      box-shadow:
+        0 30px 90px rgba(0,0,0,.7),
+        0 0 50px rgba(0,174,255,.12);
+      transform: perspective(1200px) rotateY(-4deg);
+      transition: .5s;
+    }
+
+    .product-cover img:hover {
+      transform: perspective(1200px) rotateY(0deg) translateY(-8px);
+    }
+
+    /* =========================
+       STATS
+    ========================== */
+
+    .stats {
+      max-width: 1050px;
+      margin: -10px auto 80px;
+      padding: 0 25px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 28px 15px;
+      border-right: 1px solid rgba(255,255,255,.07);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: var(--cyan);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section {
+      padding: 100px 25px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .section-label {
+      color: var(--cyan);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+      background: #070c12;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 43px;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 28px;
+    }
+
+    .check-list li {
+      margin-bottom: 15px;
+      color: #d9e4ed;
+      display: flex;
+      gap: 12px;
+    }
+
+    .check {
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    .about-card {
+      padding: 40px;
+      background: linear-gradient(
+        145deg,
+        rgba(24,166,255,.08),
+        rgba(255,255,255,.025)
+      );
+      border: 1px solid var(--border);
+      border-radius: 22px;
+    }
+
+    .about-card h3 {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .mini-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .mini-icon {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(25,170,255,.1);
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    .mini-item strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .mini-item span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 25px;
+      min-height: 180px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.018)
+      );
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 16px;
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(57,213,255,.3);
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+
+    .service-number {
+      font-size: 12px;
+      color: var(--cyan);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       AUDIENCE
+    ========================== */
+
+    .audience {
+      background: #070c12;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .audience-card {
+      padding: 35px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.025);
+    }
+
+    .audience-card .icon {
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .audience-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .audience-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       HOW
+    ========================== */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 35px 25px;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 22px;
+      background: rgba(25,170,255,.1);
+      border: 1px solid rgba(57,213,255,.25);
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta-section {
+      padding: 120px 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box {
+      max-width: 950px;
+      margin: auto;
+      padding: 75px 40px;
+      text-align: center;
+      border-radius: 28px;
+      border: 1px solid rgba(57,213,255,.18);
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(15,164,255,.14),
+          rgba(255,255,255,.02) 60%
+        );
+    }
+
+    .cta-box h2 {
+      font-size: clamp(35px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       SOCIAL
+    ========================== */
+
+    .social {
+      background: #070c12;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .social-card {
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.025);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: .3s;
+    }
+
+    .social-card:hover {
+      border-color: rgba(57,213,255,.3);
+      transform: translateY(-3px);
+    }
+
+    .social-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: rgba(255,255,255,.06);
+      font-size: 21px;
+    }
+
+    .social-info span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       FAQ
+    ========================== */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 13px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 22px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      padding: 0 22px 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 45px 25px;
+      background: #030507;
+    }
+
+    .footer-content {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-content p {
+      color: #667583;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      color: #8a9aa8;
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE BUY BUTTON
+    ========================== */
+
+    .mobile-buy {
+      display: none;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .hero-container,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .product-cover {
+        order: -1;
+      }
+
+      .product-cover img {
+        width: min(390px, 90%);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        position: absolute;
+      }
+
+      .nav {
+        height: 65px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 105px;
+        padding-bottom: 60px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .stats {
+        margin-top: 0;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.07);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .about h2 {
+        font-size: 34px;
+      }
+
+      .about-card {
+        padding: 25px;
+      }
+
+      .cta-box {
+        padding: 55px 25px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .mobile-buy {
+        display: block;
+        position: fixed;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        z-index: 999;
+      }
+
+      .mobile-buy a {
+        display: block;
+        text-align: center;
+        background: linear-gradient(135deg, #10aaff, #007dcc);
+        padding: 16px;
+        border-radius: 12px;
+        font-weight: 900;
+        box-shadow: 0 10px 35px rgba(0,0,0,.45);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <nav class="nav">
+
+      <a href="#" class="logo">
+        IA<span>QUE</span>VENDE
+      </a>
+
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#publico">Para quem é</a>
+        <a href="#faq">FAQ</a>
+
+        <a
+          href="https://pay.kiwify.com.br/6O2OHC3"
+          target="_blank"
+          class="nav-btn"
+        >
+          Quero conhecer
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-container">
+
+        <div>
+
+          <div class="tag">
+            Inteligência Artificial + Serviços
+          </div>
+
+          <h1>
+            IA QUE <span>VENDE</span>
+          </h1>
+
+          <p class="hero-description">
+            Descubra <strong>20 serviços</strong> que você pode começar
+            a oferecer usando inteligência artificial — mesmo começando
+            praticamente do zero.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="https://pay.kiwify.com.br/6O2OHC3"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              🚀 Quero acessar agora
+            </a>
+
+            <a
+              href="#servicos"
+              class="btn btn-secondary"
+            >
+              Ver os serviços
+            </a>
+
+          </div>
+
+          <p class="hero-note">
+            🔒 Compra realizada em ambiente externo e seguro.
+          </p>
+
+        </div>
+
+
+        <div class="product-cover">
+
+          <!-- CAPA DO PRODUTO -->
+          <img
+            src="https://via.placeholder.com/600x750/07111b/39d5ff?text=IA+QUE+VENDE"
+            alt="Capa do produto IA Que Vende"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         STATS
+    ========================== -->
+
+    <div class="stats">
+
+      <div class="stats-grid">
+
+        <div class="stat">
+          <strong>20</strong>
+          <span>serviços apresentados</span>
+        </div>
+
+        <div class="stat">
+          <strong>IA</strong>
+          <span>usando inteligência artificial</span>
+        </div>
+
+        <div class="stat">
+          <strong>100%</strong>
+          <span>foco em possibilidades práticas</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         SOBRE
+    ========================== -->
+
+    <section class="about" id="sobre">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div>
+
+            <div class="section-label">
+              O que é
+            </div>
+
+            <h2>
+              Transforme ferramentas de IA em possibilidades de serviço.
+            </h2>
+
+            <p>
+              A inteligência artificial está mudando a forma como diversos
+              serviços são produzidos. O objetivo deste material é apresentar
+              possibilidades que podem ser exploradas por quem deseja começar
+              a trabalhar com serviços digitais.
+            </p>
+
+            <p>
+              Você conhece diferentes ideias, entende como elas podem ser
+              utilizadas e pode escolher aquelas que mais combinam com suas
+              habilidades e objetivos.
+            </p>
+
+            <ul class="check-list">
+
+              <li>
+                <span class="check">✓</span>
+                Ideias de serviços utilizando IA
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Possibilidades para iniciantes
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Aplicações práticas
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Diferentes áreas para explorar
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="about-card">
+
+            <h3>
+              O que você vai encontrar
+            </h3>
+
+            <div class="mini-item">
+
+              <div class="mini-icon">01</div>
+
+              <div>
+                <strong>Ideias de serviços</strong>
+                <span>
+                  Diferentes possibilidades que podem ser oferecidas.
+                </span>
+              </div>
+
+            </div>
+
+            <div class="mini-item">
+
+              <div class="mini-icon">02</div>
+
+              <div>
+                <strong>Aplicação da IA</strong>
+                <span>
+                  Entenda como ferramentas de IA podem ajudar na execução.
+                </span>
+              </div>
+
+            </div>
+
+            <div class="mini-item">
+
+              <div class="mini-icon">03</div>
+
+              <div>
+                <strong>Novas possibilidades</strong>
+                <span>
+                  Explore maneiras diferentes de transformar conhecimento
+                  em serviços digitais.
+                </span>
+              </div>
+
+            </div>
+
+            <div class="mini-item">
+
+              <div class="mini-icon">04</div>
+
+              <div>
+                <strong>Comece do seu jeito</strong>
+                <span>
+                  Escolha uma ideia e desenvolva sua própria estratégia.
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         20 SERVIÇOS
+    ========================== -->
+
+    <section id="servicos">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Conteúdo
+          </div>
+
+          <h2>
+            20 possibilidades para explorar com IA
+          </h2>
+
+          <p>
+            Conheça diferentes tipos de serviços digitais que podem ser
+            realizados com o auxílio de ferramentas de inteligência artificial.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-number">01</div>
+            <h3>Criação de textos</h3>
+            <p>Produção e adaptação de conteúdos para diferentes necessidades.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">02</div>
+            <h3>Copywriting</h3>
+            <p>Criação de textos comerciais e materiais de comunicação.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">03</div>
+            <h3>Posts para redes sociais</h3>
+            <p>Desenvolvimento de ideias e conteúdos para redes sociais.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">04</div>
+            <h3>Roteiros para vídeos</h3>
+            <p>Estruturação de roteiros para vídeos curtos e longos.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">05</div>
+            <h3>Descrições de produtos</h3>
+            <p>Textos para lojas, catálogos e páginas de produtos.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">06</div>
+            <h3>Ideias de conteúdo</h3>
+            <p>Geração de pautas e ideias para criadores e empresas.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">07</div>
+            <h3>Pesquisa e organização</h3>
+            <p>Organização de informações e auxílio em pesquisas.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">08</div>
+            <h3>Apresentações</h3>
+            <p>Estruturação de conteúdos para apresentações profissionais.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">09</div>
+            <h3>E-mails</h3>
+            <p>Criação e adaptação de mensagens profissionais.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">10</div>
+            <h3>Currículos</h3>
+            <p>Organização e melhoria da apresentação profissional.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">11</div>
+            <h3>Planejamento de conteúdo</h3>
+            <p>Estruturação de calendários e estratégias de publicação.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">12</div>
+            <h3>Materiais digitais</h3>
+            <p>Criação de materiais informativos e educativos.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">13</div>
+            <h3>Brainstorming</h3>
+            <p>Geração de ideias para projetos, marcas e negócios.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">14</div>
+            <h3>Atendimento automatizado</h3>
+            <p>Estruturação de respostas e fluxos de comunicação.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">15</div>
+            <h3>Pesquisa de mercado</h3>
+            <p>Organização de informações para análise de oportunidades.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">16</div>
+            <h3>Calendários editoriais</h3>
+            <p>Planejamento de publicações para diferentes plataformas.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">17</div>
+            <h3>Ideias para anúncios</h3>
+            <p>Estruturação de conceitos e textos para campanhas.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">18</div>
+            <h3>SEO e conteúdo</h3>
+            <p>Auxílio na estruturação de conteúdos para mecanismos de busca.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">19</div>
+            <h3>Criação de prompts</h3>
+            <p>Desenvolvimento de instruções para ferramentas de IA.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-number">20</div>
+            <h3>Consultoria de IA</h3>
+            <p>Orientação sobre possibilidades de uso de ferramentas de IA.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PARA QUEM É
+    ========================== -->
+
+    <section class="audience" id="publico">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Para quem é
+          </div>
+
+          <h2>
+            Feito para quem quer começar a explorar a IA
+          </h2>
+
+          <p>
+            O material pode ser útil para diferentes perfis interessados
+            em serviços digitais.
+          </p>
+
+        </div>
+
+
+        <div class="audience-grid">
+
+          <div class="audience-card">
+
+            <div class="icon">🚀</div>
+
+            <h3>Iniciantes</h3>
+
+            <p>
+              Para quem ainda está descobrindo como utilizar inteligência
+              artificial em atividades profissionais.
+            </p>
+
+          </div>
+
+
+          <div class="audience-card">
+
+            <div class="icon">💻</div>
+
+            <h3>Freelancers</h3>
+
+            <p>
+              Para quem já presta serviços e deseja conhecer novas
+              possibilidades de trabalho.
+            </p>
+
+          </div>
+
+
+          <div class="audience-card">
+
+            <div class="icon">📱</div>
+
+            <h3>Criadores</h3>
+
+            <p>
+              Para criadores de conteúdo que querem ampliar suas
+              possibilidades utilizando ferramentas de IA.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMO FUNCIONA
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Simples e direto
+          </div>
+
+          <h2>
+            Comece em poucos passos
+          </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+
+            <div class="step-number">
+              1
+            </div>
+
+            <h3>Acesse o material</h3>
+
+            <p>
+              Faça sua compra através do checkout externo.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              2
+            </div>
+
+            <h3>Explore as ideias</h3>
+
+            <p>
+              Conheça as diferentes possibilidades de serviços.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              3
+            </div>
+
+            <h3>Coloque em prática</h3>
+
+            <p>
+              Escolha as ideias que fazem sentido para você e desenvolva
+              sua própria estratégia.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta-section">
+
+      <div class="cta-box">
+
+        <div class="section-label">
+          Acesso ao conteúdo
+        </div>
+
+        <h2>
+          Comece a explorar o potencial da IA.
+        </h2>
+
+        <p>
+          Conheça 20 possibilidades de serviços que podem ser desenvolvidos
+          com o auxílio da inteligência artificial e encontre ideias para
+          começar sua jornada.
+        </p>
+
+        <a
+          href="https://pay.kiwify.com.br/6O2OHC3"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          🚀 ACESSAR O IA QUE VENDE
+        </a>
+
+        <p class="hero-note">
+          Você será direcionado para o checkout externo.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         REDES SOCIAIS
+    ========================== -->
+
+    <section class="social">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Acompanhe
+          </div>
+
+          <h2>
+            Siga nas redes sociais
+          </h2>
+
+          <p>
+            Acompanhe conteúdos, novidades e materiais relacionados
+            a marketing digital e inteligência artificial.
+          </p>
+
+        </div>
+
+
+        <div class="social-grid">
+
+
+          <!-- INSTAGRAM -->
+
+          <a
+            href="https://instagram.com/SEUINSTAGRAM"
+            target="_blank"
+            class="social-card"
+          >
+
+            <div class="social-info">
+
+              <div class="social-icon">
+                📸
+              </div>
+
+              <div>
+
+                <strong>Instagram</strong>
+
+                <span>
+                  @SEUINSTAGRAM
+                </span>
+
+              </div>
+
+            </div>
+
+            <strong>→</strong>
+
+          </a>
+
+
+          <!-- TIKTOK -->
+
+          <a
+            href="https://tiktok.com/@SEUTIKTOK"
+            target="_blank"
+            class="social-card"
+          >
+
+            <div class="social-info">
+
+              <div class="social-icon">
+                ♪
+              </div>
+
+              <div>
+
+                <strong>TikTok</strong>
+
+                <span>
+                  @SEUTIKTOK
+                </span>
+
+              </div>
+
+            </div>
+
+            <strong>→</strong>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+
+    <section id="faq">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Dúvidas
+          </div>
+
+          <h2>
+            Perguntas frequentes
+          </h2>
+
+        </div>
+
+
+        <div class="faq">
+
+
+          <details>
+
+            <summary>
+              O que é o IA Que Vende?
+            </summary>
+
+            <p>
+              É um material que apresenta 20 possibilidades de serviços
+              que podem ser explorados utilizando ferramentas de inteligência
+              artificial.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Preciso ser especialista em inteligência artificial?
+            </summary>
+
+            <p>
+              Não. O conteúdo foi pensado também para pessoas que estão
+              começando a conhecer as possibilidades da IA.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Posso trabalhar com os serviços apresentados?
+            </summary>
+
+            <p>
+              O material apresenta possibilidades. A forma como cada pessoa
+              irá utilizar essas ideias, desenvolver suas habilidades e
+              oferecer seus serviços depende da própria estratégia e execução.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Como faço para comprar?
+            </summary>
+
+            <p>
+              Clique em qualquer botão de acesso do site. Você será
+              direcionado para o checkout externo da Kiwify.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              O pagamento acontece neste site?
+            </summary>
+
+            <p>
+              Não. Este site funciona como uma página de apresentação.
+              O pagamento é realizado através do checkout externo.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div>
+
+        <div class="logo">
+          IA<span>QUE</span>VENDE
+        </div>
+
+        <p>
+          Inteligência artificial aplicada a possibilidades reais.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="#sobre">
+          Sobre
+        </a>
+
+        <a href="#servicos">
+          Serviços
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+        <a
+          href="https://pay.kiwify.com.br/6O2OHC3"
+          target="_blank"
+        >
+          Comprar
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       BOTÃO FIXO MOBILE
+  ========================== -->
+
+  <div class="mobile-buy">
+
+    <a
+      href="https://pay.kiwify.com.br/6O2OHC3"
+      target="_blank"
+    >
+      🚀 ACESSAR O IA QUE VENDE
+    </a>
+
+  </div>
+
+
+</body>
+</html>
